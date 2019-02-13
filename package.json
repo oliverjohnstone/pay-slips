@@ -1,0 +1,11 @@
+{
+  "name": "pay-slips",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Oliver Johnstone <oliver@ojs.co>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.12.2",
+    "tabletojson": "^1.0.4"
+  }
+}
