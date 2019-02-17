@@ -4,7 +4,7 @@ const CMD_CLICK_AND_WAIT = 'clickAndWaitFor';
 
 const TOKENS = {
     USER_NAME: '{{USER_NAME}}',
-    PASSWORD: 'PASSWORD'
+    PASSWORD: '{{PASSWORD}}'
 };
 
 class Commands {
