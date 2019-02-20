@@ -1,7 +1,9 @@
+const Process = require('../src/scrape/process.js');
+
 const appendSalaryAndNetPay = (mapped, table) => ({
     ...mapped,
-    salary: table[table.indexOf('Salary') + 1],
-    net: table[table.indexOf('NET PAY>>>') + 1]
+    salary: Process.money(table[table.indexOf('Salary') + 1]),
+    net: Process.money(table[table.indexOf('NET PAY>>>') + 1])
 });
 
 module.exports = {

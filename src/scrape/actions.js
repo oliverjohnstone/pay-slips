@@ -27,14 +27,11 @@ class ScrapeActions {
     }
 
     _loadPostProcessFunction(postProcess) {
-        const typeOf = typeof postProcess;
-        if (postProcess && typeOf !== '') {
-            throw new Error(`Expected post process function to be a function, got: ${typeOf}`);
-        }
         return postProcess || (value => value);
     }
 
     _mapTable(flattenedTable, values) {
+
         const defaultObj = values.reduce((acc, { name }) => ({ ...acc, [name]: false }), {});
 
         return values.reduce((acc, config) => {
@@ -53,7 +50,7 @@ class ScrapeActions {
     }
 
     async run() {
-        const config = this.debug ? { headless: false, slowMo: 200 } : {};
+        const config = this.debug ? { headless: false } : {};
         this.browser = await puppeteer.launch(config);
         this.page = await this.createPage();
 

@@ -19,10 +19,12 @@ class ConfigValue {
 
     parseToPaymentMethod() {
         this.postProcess = Process.paymentMethod;
+        return this;
     }
 
     parseToDate(format) {
         this.postProcess = Process.date.bind(null, format);
+        return this;
     }
 }
 
