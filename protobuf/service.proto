@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package payslips;
+
+message PaySlip {
+    string id = 1;
+    string nationalInsuranceNumber = 2;
+    string taxCode = 3;
+    string paidBy = 4;
+    string payDate = 5;
+    int32 payPeriod = 6;
+    int32 employersNIContributions = 7;
+    int32 employersPensionContributionsThisPeriod = 8;
+    string taxReference = 9;
+    string taxDistrict = 10;
+    int32 salary = 11;
+    int32 net = 12;
+    string user = 13;
+}
+
+service PaySlips {
+    rpc GetPaySlips (GetPaySlipsRequest) returns (PaySlipCollection) {}
+}
+
+message PaySlipCollection {
+    repeated PaySlip slips = 1;
+}
+
+message GetPaySlipsRequest {
+}
